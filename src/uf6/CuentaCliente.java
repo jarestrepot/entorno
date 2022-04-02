@@ -75,16 +75,18 @@ public class CuentaCliente {
      * Esta funcion permite ingresar dinero a la cuenta siempre y cuando no sea menor a 0.
      * @param cantidad_ingresar dinero que se quiere ingresar.
      */
-    public void ingresar_dinero(double cantidad_ingresar)
+    public boolean ingresar_dinero(double cantidad_ingresar)
      {
   
       if (cantidad_ingresar < 0)
        {
          System.out.println("El valor no puede ser menor o igual a  0");
+         return false;
        }
        else 
        {
          saldo +=cantidad_ingresar;
+         return true;
        } 
      }
     /**

@@ -134,15 +134,25 @@ public class Banco {
             
         }
    }
-   public void ingresarDinero (String numero, float importe)
+   public boolean ingresarDinero (String numero, float importe)
    {
        CuentaCliente cuenta = ObtenerCuentas(numero);
-       
+       boolean devuelve = false; 
         if (cuenta!=null)
         { 
-            cuenta.ingresar_dinero(importe);
-            ActualizarCuentas(cuenta);
+            
+            boolean calculo = cuenta.ingresar_dinero(importe);
+            if (calculo == true)
+            {
+                ActualizarCuentas(cuenta);
+                devuelve = true;
+            }
+            else{
+                devuelve = false;
+            }
+            
         }
+        return devuelve;
    }
    public boolean retirarDinero (String numero, float importe)
    {
