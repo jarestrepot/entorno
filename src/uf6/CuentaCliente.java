@@ -80,7 +80,7 @@ public class CuentaCliente {
   
       if (cantidad_ingresar < 0)
        {
-         System.out.println("El ingreso no puede ser menor de 0");
+         System.out.println("El valor no puede ser menor o igual a  0");
        }
        else 
        {
@@ -102,7 +102,6 @@ public class CuentaCliente {
        }
        else 
        {
-        System.out.println("NO SE ADMITE VALORES NEGATIVOS");
         return false;
        }
        

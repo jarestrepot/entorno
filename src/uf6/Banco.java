@@ -144,15 +144,23 @@ public class Banco {
             ActualizarCuentas(cuenta);
         }
    }
-   public void retirarDinero (String numero, float importe)
+   public boolean retirarDinero (String numero, float importe)
    {
        CuentaCliente cuenta = ObtenerCuentas(numero);
-       
+       boolean devuelve = false; 
         if (cuenta!=null)
         { 
-            cuenta.reintegro(importe);
-            ActualizarCuentas(cuenta);
+            boolean retorno = cuenta.reintegro(importe);
+            if(retorno == true){
+               ActualizarCuentas(cuenta);
+            devuelve= true; 
+            }
+            else{
+                devuelve =  false;
+            }
+ 
         }
+       return devuelve;
    }
    public void EliminarCuenta (String numero) 
     {

@@ -104,7 +104,14 @@ public class BDbanco {
         
         System.out.print("Ingrese el importe: ");
         float importe = sc.nextFloat();
-        banco.retirarDinero(numero, importe);
+        
+        boolean verificacion = banco.retirarDinero(numero, importe);
+        if (verificacion == false){
+            System.out.print("No se pudo realizar la operacion.");
+        }
+        else{
+            System.out.print("Realizado con exito. ");
+        }
     }
     public static void eliminar()
     {
