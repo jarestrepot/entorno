@@ -8,11 +8,12 @@ import java.util.Date;
  */
 
 public class CuentaCliente {
-    
+   
     private String numero;
     private String nombre;
     private Date fechaC;
     private float saldo;
+    private final String direccion;
     /**
      * Este es el constructor de la clase CuentaCliente.
      * @param numero este indica el numero de cuenta del cliente.
@@ -25,6 +26,14 @@ public class CuentaCliente {
         this.nombre = nombre;
         this.saldo = saldo;
         fechaC = new Date();
+        direccion = "Calle Badalona 14";
+    }
+    /**
+     * Direccion de la oficina principal.
+     * @return devuelve la dirección de la oficina principal.
+     */
+    public String getdireccion(){
+        return direccion;
     }
     /**
      * Numero de cuenta.
@@ -85,11 +94,10 @@ public class CuentaCliente {
      */
     public boolean reintegro(double cantidad) 
      {
-        double resta = 0;
      
-       if ( cantidad > 0 && cantidad < saldo )
+       if ( cantidad > 0 && cantidad <= saldo )
        { 
-         resta=  saldo -=cantidad;
+         saldo=  saldo -=cantidad;
         return true;
        }
        else 

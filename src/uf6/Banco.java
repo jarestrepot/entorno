@@ -14,7 +14,7 @@ import java.util.List;
 public class Banco {
     
     private String nombre;
-
+    
     public Banco(String nombre) {
         this.nombre = nombre;
     }
