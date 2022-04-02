@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","u":"allclasses-index.html"},{"p":"uf6","l":"Banco"},{"p":"uf6","l":"BDbanco"},{"p":"uf6","l":"CuentaCliente"}];updateSearchResults();
